@@ -67,7 +67,6 @@ export class CollectionComponent implements OnInit {
   }
   addImage() {
     if (this.currentCollection.quantityCollection != undefined && this.currentCollection.collectionSymbolization) {
-      alert("hhh")
 
       var currentImage: ImageModel;
       this.path = this.basePath + this.collectionSymbolization + "/";
