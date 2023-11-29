@@ -1,0 +1,28 @@
+
+
+
+<p-card header=" סריקת אוסף"  dir="rtl" >
+
+<span class="ui-inputgroup-addon">מספר אוסף</span>  <br>    
+
+<input [(ngModel)]="collectionSymbolization"  type="number" size="30" pInputText> 
+ <button (click)="getCollection()"pButton type="button" label=" הבא>"></button> <br>
+
+
+ <span class="ui-inputgroup-addon">שם האוסף</span>  <br>    
+ <input  type="text" size="30" value={{currentCollection.title}} pInputText>
+<br><br>
+
+    <div  class="divImage"*ngFor="let image of imageArray ;  let last =last" >
+
+        <app-image (isBack)="isBack($event)" [last]="last" (deleteTheLast)="deleteTheLast($event)" [currentImage]="image" [savedSuccessfully]="savedSuccessfully"></app-image>
+        <br>
+
+    </div>
+
+<br>
+<button pButton type="button" label="צרף תמונה נוספת"(click)="addImage()"></button> <br><br>
+<button pButton type="button" label="שמירה>" (click)="save()"></button> <br>
+
+
+</p-card>

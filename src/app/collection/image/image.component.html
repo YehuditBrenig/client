@@ -1,0 +1,41 @@
+<p-card [style]="{ 
+    border: '2px solid  d3d3d3 ',  
+    borderRadius: '7px',  
+    width: '450px',  
+
+}" dir="rtl">
+  <span (click)="delete()" *ngIf="last&&!savedSuccessfully" class="pi pi-trash" style="color: red"></span>
+  <h5 *ngIf="savedSuccessfully">התווסף בהצלחה<i class="pi pi-check" style="color: green"></i>
+  </h5>
+  <form [formGroup]="form" class="p-5">
+
+    <label>מספר תמונה </label>
+    <div>
+
+      <input type="text" pInputText formControlName="imageNmber">
+    </div>
+
+    <label> ניתוב שמירת תמונה </label>
+    <div>
+      <input type="text" pInputText formControlName="imageSavePath">
+
+    </div>
+
+
+    <div *ngIf="value " class="col-lg-3 field">
+      <label> ניתוב שמירת גב תמונה </label>
+      <div>
+        <input type="text" pInputText formControlName="imageBackupPath">
+      </div>
+
+    </div>
+
+
+    <label>גב לתמונה? </label>
+    <p-checkbox (click)="isBackFunc()" formControlName="ifbackImage" [(ngModel)]="value" [binary]="true"
+      inputId="binary"></p-checkbox>
+
+  </form>
+
+
+</p-card>
